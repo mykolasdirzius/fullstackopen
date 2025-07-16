@@ -1,0 +1,8 @@
+    participant browser
+    participant server
+    
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note right of browser: The browser automatically creates a new note with the stuff I wrote without waiting for the server to confirm (it "lies" to me to give me a quick reaction sensation)
+    activate server
+    server->>browser: refreshes the notes adding mine + gives me back my note
+    deactivate server
